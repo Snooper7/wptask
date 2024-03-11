@@ -1,0 +1,56 @@
+.input
+    position: relative
+    svg
+        position: absolute
+        top: 8px
+        right: 8px
+    &-text
+        width: 100%
+        input, textarea
+            width: 100%
+            display: flex
+            padding: 18px 20px
+            align-items: center
+            border-radius: 16px
+            background: #F5F6F8
+            color: #868695
+            font-size: 16px
+            font-weight: 700
+            line-height: 24px
+            font-family: Comfortaa
+            border: 1px solid transparent
+            &:hover
+                border: 1px solid #DFE0EE
+            &:focus
+                color: #050223
+            &:not(:placeholder-shown)
+                color: #050223
+        textarea
+            min-height: 120px
+        &--email
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 6px
+            width: 100%
+            input, label
+                width: 100%
+            span
+                color: #BBBBCA
+                font-size: 14px
+                font-weight: 500
+                line-height: 22px
+        &--promocode
+            input
+                color: #050223
+                font-family: Comfortaa, sans-serif
+                font-size: 16px
+                font-weight: 700
+                line-height: 24px
++max($xs)
+    .input
+        &-text
+            input, textarea
+                padding: 15px 20px
+            textarea
+                min-height: 100px

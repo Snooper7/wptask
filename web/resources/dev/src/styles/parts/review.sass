@@ -1,0 +1,47 @@
+.review
+  &__container
+    display: flex
+    flex-direction: column
+    text-align: center
+    gap: 36px
+    width: 100%
+  &__title
+    color: #050223
+    font-size: 38px
+    font-weight: 500
+    line-height: 46px
+  &__blocks
+    display: flex
+    flex-direction: column
+    gap: 24px
+  &__inputs
+    display: flex
+    flex-direction: column
+    gap: 12px
+  &__rating
+    display: flex
+    align-items: center
+    justify-content: space-between
+    span
+      color: #868695
+      font-size: 16px
+      font-weight: 700
+      line-height: 24px
+  &__footer
+    display: flex
+    flex-direction: column
+    gap: 16px
+  &__btn
+    padding: 20px 48px
+  &__agreement
+    display: flex
+
++max($xs)
+  .review
+    &__container
+      gap: 16px
+    &__title
+      font-size: 22px
+      line-height: 28px
+    &__btn
+      padding: 16px 16px

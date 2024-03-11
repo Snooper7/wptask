@@ -1,0 +1,22 @@
+$container_width: 1440px
+$paddings: 16px
+
+$xs: 640px
+$sm: 768px
+$md: 1024px
+$lg: calc($container_width + calc($paddings * 2))
+
+.container
+	width: 100%
+	max-width: calc($container_width + calc($paddings * 2))
+	padding: 0px $paddings
+	margin: 0 auto
+
+@mixin max($px)
+	@media screen and (max-width: $px)
+		@content
+
+@mixin min($px)
+	@media screen and (min-width: $px)
+		@content
+

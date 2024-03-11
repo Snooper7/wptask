@@ -1,0 +1,16 @@
+.alerts
+    &__buttons
+        display: grid
+        grid-template-columns: repeat(3, max-content)
+        grid-gap: 15px
+    &__success
+        background: #4AB868
+    &__error
+        background: #F02B2B
+    &__notify
+        background: #fdcb6e
+
+@media screen and (max-width: 480px) 
+    .alerts
+        &__buttons
+            grid-template-columns: max-content max-content

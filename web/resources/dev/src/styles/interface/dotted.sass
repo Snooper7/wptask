@@ -1,0 +1,19 @@
+.dotted
+    display: flex
+    align-items: center
+    justify-content: center
+    ul
+        display: flex
+        align-items: center
+        justify-content: center
+        li
+            width: 10px
+            height: 10px
+            border-radius: 100px
+            background: rgba(0,0,0,0.1)
+            margin-right: 10px
+            cursor: pointer
+            &:last-child
+                margin-right: 0
+            &.active
+                background: #333

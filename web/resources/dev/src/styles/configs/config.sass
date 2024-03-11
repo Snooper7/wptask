@@ -1,0 +1,95 @@
++font('Manrope', normal, 400, 'fonts/Manrope/Manrope-Regular.woff2')
++font('Manrope', normal, 500, 'fonts/Manrope/Manrope-Medium.woff2')
++font('Manrope', normal, 600, 'fonts/Manrope/Manrope-SemiBold.woff2')
++font('Manrope', normal, 700, 'fonts/Manrope/Manrope-Bold.woff2')
+
+.grecaptcha-badge
+  display: none !important
+
+input, textarea, button,option,select
+  outline: none
+  -webkit-appearance: none
+  border: none
+  box-shadow: none
+  padding: 0
+  margin: 0
+  border-radius: 0
+  background: none
+  resize: none
+  &:focus:required:invalid
+    border-color: red
+  &:required:valid
+    border-color: green
+
+*,*::before, *::after
+  outline: none
+  box-sizing: border-box
+  -webkit-tap-highlight-color: transparent
+
+img
+  max-width: 100%
+  display: block
+
+html, body
+  scroll-behavior: smooth
+
+
+body
+  position: relative
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  background: #fff
+  color: #333
+  margin: 0
+  font-weight: 400
+  font-family: 'Manrope', sans-serif
+  font-size: 16px
+  line-height: 24px
+  -webkit-text-size-adjust: 100%
+  //+scrollbars(6px, #333, transparent)
+
+main
+  flex: 1
+
+ul, h1, h2, h3, h4, h5, p, ul, ol, li, a
+  padding: 0
+  margin: 0
+  text-decoration: none
+  list-style: none
+  color: inherit
+
+button
+  font-family: 'Inter', sans-serif
+  color: #333333
+  cursor: pointer
+  font-size: 16px
+  line-height: 24px
+
+[disabled]
+  opacity: 0.5
+  pointer-events: none
+
+[hidden]
+  display: none !important
+
+#map
+  width: 100%
+  height: 100%
+  [class*="ymaps-2"][class*="-copyrights-promo"],
+  [class*="ymaps-2"][class*="-copyright__wrap"]
+    display: none !important
+
+.visually-hidden
+  clip: rect(0 0 0 0)
+  border: none
+  height: 1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  white-space: nowrap
+  width: 1px
+
+
+

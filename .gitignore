@@ -1,0 +1,31 @@
+# Application
+web/app/plugins/classic-editor
+web/app/plugins/cyr2lat
+web/app/plugins/wordpress-seo
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/themes/twentytwentyfour/
+web/app/themes/vyatka-it-wp-theme/vendor
+web/app/upgrade
+#web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/cache/*
+web/resources/node_modules/
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml

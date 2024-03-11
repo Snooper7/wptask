@@ -1,0 +1,49 @@
+{
+  "name": "start-frontend",
+  "version": "1.0.0",
+  "author": "Ruslan Vladimirow by Vyatka-IT",
+  "description": "Start Frontend part",
+  "main": "index.js",
+  "type": "module",
+  "browserslist": [
+    "last 10 versions"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "autoprefixer": "^10.3.4",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "browser-sync": "^2.27.5",
+    "browsersync-ssi": "^0.2.4",
+    "cssnano": "^5.0.8",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.3",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rsync": "^0.0.9",
+    "gulp-sass": "^5.0.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.41.0",
+    "webpack": "^5.52.1",
+    "webpack-stream": "^7.0.0"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "@csstools/normalize.css": "^12.0.0",
+    "@fancyapps/ui": "^5.0.23",
+    "swiper": "^8.4.5"
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "atmospherictime/start-theme",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Resources\\": "src/resources",
+            "App\\Services\\": "src/services"
+        },
+        "files": [
+            "src/config.php",
+            "src/filters.php",
+            "src/api.php",
+            "src/acf.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "VyatkaIt",
+            "email": "info@vyatka-it.ru"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

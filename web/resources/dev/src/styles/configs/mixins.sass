@@ -1,0 +1,19 @@
+@mixin font($f_name, $f_style, $f_weight, $f_url)
+	@font-face
+		font-family: $f_name
+		font-style: $f_style
+		font-weight: $f_weight
+		font-display: swap
+		src: url($f_url) format('woff2')
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%))
+	&::-webkit-scrollbar
+		width: $size
+		height: $size
+	&::-webkit-scrollbar-thumb
+		background: $foreground-color
+	&::-webkit-scrollbar-track
+		background: $background-color
+	&
+		scrollbar-face-color: $foreground-color
+		scrollbar-track-color: $background-color

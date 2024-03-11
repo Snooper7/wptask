@@ -1,0 +1,20 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer__container">
+            Footer
+        </div>
+    </div>
+</footer>
+
+<section class="modals">
+  {% include "modals/review.twig" %}
+  {% include "modals/thanks-review.twig" %}
+</section>
+
+{{ function('wp_footer') }}
+{% if footer_code is not empty %}
+  {{ footer_code }}
+{% endif %}
+
+</body>
+</html>

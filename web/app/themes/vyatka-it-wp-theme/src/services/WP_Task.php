@@ -4,9 +4,44 @@ namespace App\Services;
 
 use Exception;
 use Timber\Timber;
+use WP_REST_Request;
 
 class WP_Task
 {
+    public function all() : array
+    {
+        $tasks = Timber::get_posts([
+            'post_type' => 'task',
+            'numberposts' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        ]);
+
+        foreach ($tasks as $key => $task) {
+            $tasks[$key]->done = get_field('done', $task->id);
+            $tasks[$key]->target = get_field('target_date', $task->id);
+        }
+
+        return [
+            'tasks' => $tasks
+        ];
+    }
+
+    public function done(WP_REST_Request $request) : array
+    {
+        $id = $request->get_param('id');
+        $done = $request->get_param('done') === 'true';
+
+        update_field('done', !$done, $id);
+
+        $tasks = $this->all();
+
+        return [
+            'success' => true,
+            'tasks' => $tasks['tasks']
+        ];
+    }
+
     /**
      * @throws Exception
      */
@@ -25,9 +60,10 @@ class WP_Task
         update_field('done', false, $task_object);
 
         if ($task_object) {
+            $tasks = $this->all();
             return [
                 'success' => true,
-//                'fragments' => $this->fragments()
+                'tasks' => $tasks['tasks']
             ];
         } else {
             return [
@@ -54,14 +90,17 @@ class WP_Task
         }
     }
 
-    public function remove()
+    public function remove(WP_REST_Request $request) : array
     {
-        $task_id = $_POST[ 'task_id' ];
+        $task_id = $request->get_param('id');
 
         if ($task_id) {
             if (wp_delete_post($task_id, $force_delete = false)) {
+                $tasks = $this->all();
+
                 return [
                     'success' => true,
+                    'tasks' => $tasks['tasks']
                 ];
             } else {
                 return [

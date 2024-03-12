@@ -28,6 +28,11 @@ function register_routes(): void
 {
 
     // Cart Routes
+    register_rest_route(API_NAMESPACE, '/task/all', [
+        'methods'  => 'GET',
+        'callback' => [ new WP_Task(), 'all' ],
+    ]);
+
     register_rest_route(API_NAMESPACE, '/task/add', [
         'methods'  => 'POST',
         'callback' => [ new WP_Task(), 'add' ],
@@ -41,6 +46,11 @@ function register_routes(): void
     register_rest_route(API_NAMESPACE, '/task/remove', [
         'methods'  => 'POST',
         'callback' => [ new WP_Task(), 'remove' ],
+    ]);
+
+    register_rest_route(API_NAMESPACE, '/task/done', [
+        'methods'  => 'POST',
+        'callback' => [ new WP_Task(), 'done' ],
     ]);
 
     register_rest_route(API_NAMESPACE, '/task/detail', [

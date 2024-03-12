@@ -75,6 +75,15 @@
         <Configuration>
           <option name="path" value="$PROJECT_DIR$/tests" />
         </Configuration>
+        <Configuration>
+          <option name="path" value="$PROJECT_DIR$/tests" />
+        </Configuration>
+        <Configuration>
+          <option name="path" value="$PROJECT_DIR$/tests" />
+        </Configuration>
+        <Configuration>
+          <option name="path" value="$PROJECT_DIR$/web/app/themes/vyatka-it-wp-theme/tests" />
+        </Configuration>
       </list>
     </option>
   </component>

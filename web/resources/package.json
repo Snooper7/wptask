@@ -44,6 +44,7 @@
   "dependencies": {
     "@csstools/normalize.css": "^12.0.0",
     "@fancyapps/ui": "^5.0.23",
+    "alpinejs": "^3.13.7",
     "swiper": "^8.4.5"
   }
 }

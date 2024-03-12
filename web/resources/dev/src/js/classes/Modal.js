@@ -108,5 +108,5 @@ export default class Modal extends Controls {
         }
     }
 }
-
+window.Modal = Modal;
 Modal.init()

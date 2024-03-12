@@ -9,11 +9,14 @@ import './classes/SetSizes.js'
 import './classes/CookieAccept.js'
 import './classes/ToTop.js'
 import './classes/Rating.js'
-import './classes/TaskForm.js'
+// import './classes/TaskForm.js'
 
-import './classes/Hover3D.js'
-import './classes/Inputer.js'
+import Alpine from 'alpinejs'
+window.Alpine = Alpine
 
-document.addEventListener('DOMContentLoaded', function() {
+import tasks from './modules/tasks.js'
 
-})
+Alpine.data('tasks', tasks);
+Alpine.start()
+
+

@@ -1,4 +1,4 @@
-<section class="tasks">
+<section class="tasks" x-data="tasks">
     <div class="container">
         <div class="tasks__container dfcs">
             {% if tasks %}
@@ -7,11 +7,11 @@
                     <button class="tasks__btn btn btn-1" data-modal="create">Создать задачу</button>
                 </div>
                 <div class="tasks__items dfcs">
-                    {% for task in tasks %}
-                        {% include "parts/task.twig" %}
-                    {% endfor %}
+                    {% include "parts/task.twig" %}
                 </div>
             {% endif %}
         </div>
     </div>
+    {% include "modals/create.twig" %}
+    {% include "modals/edit.twig" %}
 </section>

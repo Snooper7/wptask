@@ -1,0 +1,17 @@
+<section class="tasks">
+    <div class="container">
+        <div class="tasks__container dfcs">
+            {% if tasks %}
+                <div class="tasks__top dfrcsb">
+                    <div class="tasks__title">Список задач</div>
+                    <button class="tasks__btn btn btn-1" data-modal="create">Создать задачу</button>
+                </div>
+                <div class="tasks__items dfcs">
+                    {% for task in tasks %}
+                        {% include "parts/task.twig" %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

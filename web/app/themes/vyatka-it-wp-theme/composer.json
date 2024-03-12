@@ -10,7 +10,8 @@
             "src/config.php",
             "src/filters.php",
             "src/api.php",
-            "src/acf.php"
+            "src/acf.php",
+            "src/post_types.php"
         ]
     },
     "authors": [

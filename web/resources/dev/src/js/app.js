@@ -9,7 +9,7 @@ import './classes/SetSizes.js'
 import './classes/CookieAccept.js'
 import './classes/ToTop.js'
 import './classes/Rating.js'
-import './classes/ReviewForm.js'
+import './classes/TaskForm.js'
 
 import './classes/Hover3D.js'
 import './classes/Inputer.js'

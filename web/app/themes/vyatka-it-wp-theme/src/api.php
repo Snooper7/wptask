@@ -5,6 +5,7 @@ use App\Services\WP_Checkout;
 use App\Services\WP_Mail;
 use App\Services\WP_Product;
 use App\Services\WP_Review;
+use App\Services\WP_Task;
 
 define('API_NAMESPACE', 'site/v1');
 
@@ -23,43 +24,27 @@ add_filter('woocommerce_is_rest_api_request', function ($is_rest_api_request) {
     return false;
 });
 
-function register_routes()
+function register_routes(): void
 {
-    register_rest_route(API_NAMESPACE, '/review/add', [
-        'methods'  => 'POST',
-        'callback' => [ new WP_Review(), 'add' ],
-    ]);
-
-    // Product
-    register_rest_route(API_NAMESPACE, '/product/detail', [
-        'methods'  => 'POST',
-        'callback' => [ new WP_Product(), 'detail' ],
-    ]);
 
     // Cart Routes
-    register_rest_route(API_NAMESPACE, '/cart/add', [
+    register_rest_route(API_NAMESPACE, '/task/add', [
         'methods'  => 'POST',
-        'callback' => [ new WP_Cart(), 'add' ],
+        'callback' => [ new WP_Task(), 'add' ],
     ]);
 
-    register_rest_route(API_NAMESPACE, '/cart/update', [
+    register_rest_route(API_NAMESPACE, '/task/update', [
         'methods'  => 'POST',
-        'callback' => [ new WP_Cart(), 'update' ],
+        'callback' => [ new WP_Task(), 'update' ],
     ]);
 
-    register_rest_route(API_NAMESPACE, '/cart/remove', [
+    register_rest_route(API_NAMESPACE, '/task/remove', [
         'methods'  => 'POST',
-        'callback' => [ new WP_Cart(), 'remove' ],
+        'callback' => [ new WP_Task(), 'remove' ],
     ]);
 
-    register_rest_route(API_NAMESPACE, '/cart/detail', [
+    register_rest_route(API_NAMESPACE, '/task/detail', [
         'methods'  => 'GET',
-        'callback' => [ new WP_Cart(), 'detail' ],
-    ]);
-
-    // Checkout Routes
-    register_rest_route(API_NAMESPACE, '/order/create', [
-        'methods'  => 'POST',
-        'callback' => [ new WP_Checkout(), 'create' ],
+        'callback' => [ new WP_Task(), 'detail' ],
     ]);
 }

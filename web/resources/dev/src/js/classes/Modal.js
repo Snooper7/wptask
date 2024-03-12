@@ -34,7 +34,7 @@ export default class Modal extends Controls {
     }
 
     closeClick(e) {
-        if (e.target.classList.contains('modal__close') ||
+        if (e.target.closest('.modal__close') ||
             e.target.classList.contains('modal__content') ||
             e.target.classList.contains('modal')) {
                 this.close()

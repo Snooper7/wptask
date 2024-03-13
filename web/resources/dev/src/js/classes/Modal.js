@@ -13,6 +13,7 @@ export default class Modal extends Controls {
         this.open_handler = this.open.bind(this)
 
         this.open_buttons = document.querySelectorAll(`[data-modal="${this.modal_type}"]`)
+        console.log(this.open_buttons)
         this.open_buttons.forEach(button => button.addEventListener('click', this.open_handler))
 
         // Закрытие
@@ -92,7 +93,6 @@ export default class Modal extends Controls {
             current.close()
 
             current.open_buttons.forEach(button => button.removeEventListener('click', current.open_handler))
-            current.close_buttons.forEach(button => button.removeEventListener('click', current.close_handler))
         }
         
         modals = []
@@ -110,3 +110,7 @@ export default class Modal extends Controls {
 }
 window.Modal = Modal;
 Modal.init()
+
+window.addEventListener('tasks_loaded', () => {
+    Modal.reInit()
+})

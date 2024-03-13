@@ -49,7 +49,7 @@ class WP_Task
     {
         $task_id = wp_insert_post([
             'post_title'    => sanitize_text_field($_POST['title']),
-            'post_content'  => $_POST['text'],
+            'post_content'  => !empty($_POST['text']) ? sanitize_text_field($_POST['text']) : '',
             'post_status'   => 'publish',
             'post_author' => 1,
             'post_type' => 'task',
@@ -72,22 +72,35 @@ class WP_Task
         }
     }
 
-    public function update()
+    public function update(WP_REST_Request $request)
     {
-        if ($cart_id) {
-            if (WC()->cart->set_quantity($cart_id, $quantity)) {
-                return [
-                    'success' => true,
-                    'fragments' => $this->fragments([
-                        'cart' => true
-                    ])
-                ];
-            } else {
-                return [
-                    'success' => false
-                ];
-            }
+        $post_args = [
+            'ID' => $request->get_param('id')
+        ];
+
+        if ($request->get_param('title')) {
+            $post_args['post_title'] = $request->get_param('title');
+            $post_args['post_content'] = $request->get_param('text');
         }
+        if ($request->get_param('title')) {
+            $post_args['post_content'] = $request->get_param('text');
+        }
+
+        wp_update_post($post_args);
+
+        $task_object = get_post($post_args['ID']);
+
+        if ($request->get_param('target_date')) {
+            update_field('target_date', $request->get_param('target_date'), $task_object);
+        }
+
+
+        $tasks = $this->all();
+
+        return [
+            'success' => true,
+            'tasks' => $tasks['tasks']
+        ];
     }
 
     public function remove(WP_REST_Request $request) : array
